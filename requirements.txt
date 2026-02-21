@@ -1,7 +1,4 @@
-Frontend - HTML
-           CSS
-           JavaScript
-
-Backend - Python
-          PHP
-          Django/Flask
+flask
+flask-mysqldb
+flask-bcrypt
+authlib
