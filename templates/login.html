@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login | GTL</title>
+<title>Login | GTL Utsav Dining</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -12,36 +12,41 @@
 <body>
 
 <div class="login-page">
-<div class="login-overlay">
-<div class="login-card">
+  <div class="login-overlay">
+    <div class="login-card">
 
-<div class="toggle-buttons">
-<button id="loginBtn" class="active">Log In</button>
-<button id="registerBtn">Register</button>
+      <div class="text-center mb-3">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-circle" alt="GTL Logo">
+      </div>
+
+      <div class="toggle-buttons">
+        <button id="loginBtn" class="active">Log In</button>
+        <button id="registerBtn">Register</button>
+      </div>
+
+      <a href="/google-login" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+        Continue with Google
+      </a>
+
+      <form id="loginForm" method="POST" action="/login">
+        <input type="text" name="user_id" placeholder="User Id" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit" class="gradient-btn w-100">Log In</button>
+      </form>
+
+      <form id="registerForm" method="POST" action="/register">
+        <input type="text" name="user_id" placeholder="User Id" required>
+        <input type="email" name="email" placeholder="Email Id" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit" class="gradient-btn w-100">Register</button>
+      </form>
+
+    </div>
+  </div>
 </div>
 
-<a href="/google-login" class="google-btn">
-<img src="https://developers.google.com/identity/images/g-logo.png">
-Continue with Google
-</a>
-
-<form id="loginForm">
-<input type="text" placeholder="User Id">
-<input type="password" placeholder="Enter Password">
-<button class="gradient-btn">Log In</button>
-</form>
-
-<form id="registerForm">
-<input type="text" placeholder="User Id">
-<input type="email" placeholder="Email Id">
-<input type="password" placeholder="Enter Password">
-<button class="gradient-btn">Register</button>
-</form>
-
-</div>
-</div>
-</div>
-
-<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+<!-- Fixed: was referencing login.js but file is theme.js -->
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 </body>
 </html>

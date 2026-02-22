@@ -80,10 +80,19 @@ body {
 .btn-gold {
     background-color: var(--accent-gold);
     color: var(--deep-brown);
-    padding: 10px 30px;
+    padding: 12px 36px;
     border-radius: 30px;
     font-weight: 600;
     border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-gold:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(229,175,81,0.5);
+    color: var(--accent-gold);
 }
 
 .btn-outline-custom {
@@ -91,6 +100,7 @@ body {
     color: var(--accent-gold);
     padding: 10px 30px;
     border-radius: 30px;
+    text-decoration: none;
 }
 
 /* ================= TESTIMONIAL ================= */
@@ -182,6 +192,7 @@ body {
     padding: 10px;
     font-weight: 600;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .toggle-buttons .active {
@@ -196,6 +207,7 @@ body {
     margin: 15px 0;
     padding: 8px;
     outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 .gradient-btn {
@@ -205,6 +217,12 @@ body {
     border-radius: 30px;
     color: var(--deep-brown);
     font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .google-btn {
@@ -227,4 +245,92 @@ body {
 
 #registerForm {
     display: none;
+}
+
+/* ================= WELCOME PAGE ================= */
+
+.welcome-page {
+    height: 100vh;
+    background: url("../images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(52, 30, 15, 0.80);
+}
+
+.welcome-overlay {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-content {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.welcome-content .logo-circle {
+    height: 90px;
+    width: 90px;
+    border: 4px solid var(--accent-gold);
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.welcome-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.welcome-content h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome-tagline {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 30px;
+}
+
+/* Decorative divider */
+.welcome-content h1::after {
+    content: "✦ ✦ ✦";
+    display: block;
+    font-size: 1rem;
+    color: var(--accent-gold);
+    margin: 15px auto 10px;
+    letter-spacing: 8px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .welcome-content h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .login-overlay { padding: 20px; }
+    .login-card { width: 100%; }
 }
