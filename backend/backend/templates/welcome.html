@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome | GTL Utsav Dining</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="welcome-page">
+  <div class="welcome-overlay">
+    <div class="welcome-content text-center">
+
+      <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-circle mb-4" alt="GTL Logo">
+
+      <p class="welcome-subtitle">GRAND TASTE LEAGUE PRESENTS</p>
+      <h1>GTL Utsav Dining</h1>
+      <p class="welcome-tagline">Where Rustic Indian Tradition Meets Smart Technology</p>
+
+      <a href="/home" class="btn-gold mt-4 d-inline-block">✦ Continue ✦</a>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
